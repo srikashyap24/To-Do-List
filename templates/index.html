@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Todo App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1 class="app-title">Todo App</h1>
+            <p class="app-subtitle">Stay organized and get things done</p>
+        </header>
+
+        <div class="todo-form">
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="todoInput" 
+                    placeholder="What needs to be done?" 
+                    maxlength="200"
+                    autocomplete="off"
+                >
+                <button id="addBtn" class="btn btn-primary">
+                    <span class="btn-text">Add Task</span>
+                    <span class="btn-icon">+</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="todo-stats">
+            <span id="totalCount" class="stat">0 tasks</span>
+            <span id="completedCount" class="stat">0 completed</span>
+        </div>
+
+        <div class="todo-list-container">
+            <ul id="todoList" class="todo-list"></ul>
+            <div id="emptyState" class="empty-state">
+                <div class="empty-icon">📝</div>
+                <h3>No tasks yet</h3>
+                <p>Add a task above to get started!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
